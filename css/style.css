@@ -1,0 +1,172 @@
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+body {
+	font-family: 'Lato', sans-serif;
+	font-size: 14px;
+	line-height: 1.6;
+	color: #24292d;
+	text-align: center;
+}
+
+/*The only way you can make vertical percentages work is bt adding
+this as an extra rule.This is not needed when using vh*/
+html {
+	height: 100%;
+}
+
+header {
+	background: url(../images/mountain.jpg) no-repeat center;
+	background-size: cover;
+	/*Stick image on background of image on page*/
+	background-attachment: fixed;
+
+	/* vh - viewport height(browser window/mobile screen height)*/
+	height: 100vh;
+}
+
+h1 {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	/* Most supported way of fixing out offset to be in the centre, 
+	IE8 friendly. Number calculated maually, not the greatest
+	thing to be doing incase the image changes*/
+	/*margin: -132px 0 0 -250px;*/
+
+	/*Not supported by IE8 and needs vender prefix for safari*/
+	/*Percentage within translate is a percentage of the thing itself*/
+	transform: translate(-50%, -50%); /*Moving on the X and Y axis*/
+	/*Vendor prefix because tranform has not been added by apple*/
+	-webkit-translate: transform translate(-50%, -50%);
+	/*transform: scale(2);*/
+	/*transform: rotate(90deg);*/
+}
+
+.arrow-btn {
+	position: absolute;
+	bottom: 20px;
+}
+
+.intro {
+	padding: 50px 0 50px 0;
+	background-color: #e0e3e6;
+}
+
+.feature {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 50px;
+}
+
+h2 {
+	font-size: 26px;
+	text-transform: uppercase;
+	margin: 0 0 40px 0;
+	font-weight: 300;
+}
+
+p {
+	margin: 0 0 20px 0;
+}
+
+.feature img {
+	/* Anything that is diaplay block will no longer be centred
+	by text-align: centre*/
+	display: block;
+	margin: 15px auto 15px auto;
+}
+
+.blue-lagoon {
+background-image: url(../images/blue-lagoon.jpg);
+}
+
+.pool {
+background-image: url(../images/pool.jpg);
+}
+
+.river {
+background-image: url(../images/river.jpg);
+}
+.forest {
+background-image: url(../images/forest.jpg);
+}
+
+.boat {
+background-image: url(../images/boat.jpg);
+}
+
+.scroll-effect {
+	height: 100vh;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/*Allows you to use position absolute inside of this
+	tag and work in the way we expect*/
+	position: relative;
+	background-attachment: fixed;
+}
+
+h3 {
+	position: absolute;
+	font-size: 42px;
+	color: #fff;
+	bottom: 30px;
+	text-transform: uppercase;
+	font-weight: 300;
+	/*Make whole h3 stretch - bit simpler than using
+	left 50% | translate*/
+	width: 100%;
+}
+
+footer {
+	padding: 50px 0;
+	/* text effects - affect both the small tag and the a tag*/
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 300;
+
+}
+
+footer a {
+	text-decoration: none;
+	color: #24292d;
+	padding: 0 10px 0 10px;
+}
+
+/*Style for mail chimp form*/
+
+form {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+input {
+	width: 100%;
+	/*If there is alreadya  width set on a tag and it is les than max-width you
+	/*are trying to set nothing will happen*/
+	/*width 400px;*/
+	/*max-width: 800px;*/
+	/*800 is ignored by the because 400 is less than 800*/
+	outline: none;
+	border: solid 2px #24292d;
+	padding: 10px;
+	margin: 0 0 20px 0;
+	text-align: center;
+	transition: all 0.5s;
+}
+
+label {
+	/*keep in the html and hide with css - screen reader friendly*/
+	display: none;
+}
+
+input[type="submit"] {
+	text-transform: uppercase;
+	/*see through with color as transparent*/
+	background-color: transparent;
+}
+
+input:focus {
+	/*this happens when we click on an input and are foccussed to type in*/
+	border-color: #16b898;	
+}
